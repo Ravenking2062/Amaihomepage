@@ -1,5 +1,3 @@
-
-
 <html>
 <head>
     <title>Homepage for Amai App</title>
