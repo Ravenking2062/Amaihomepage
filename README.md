@@ -1,9 +1,9 @@
- <!DOCTYPE html>
+# <!DOCTYPE html>
 <html>
 <head>
     <title>Homepage for Amai App</title>
     <!-- Redirect to your Glide app after 3 seconds -->
-    <meta http-equiv="refresh" content="3;url=https://amai8.glide.page">
+    <meta http-equiv="refresh" content="3;url=https://inamai.org">
 </head>
 <body>
     <h1>Welcome to Amai</h1>
