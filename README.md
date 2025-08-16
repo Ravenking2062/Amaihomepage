@@ -1,5 +1,5 @@
 # 
-<!DOCTYPE html>
+
 <html>
 <head>
     <title>Homepage for Amai App</title>
@@ -11,5 +11,7 @@
     <p>This is the official homepage. Redirecting to the app...</p>
     <!-- Privacy Policy link (required by Google) -->
     <p><a href="https://policies.inamai.org/privacy-policy.html">Privacy Policy</a></p>
+    <!-- Terms of Use link (required by Google)-->
+      <t><a href="https://terms.amailegal.com/terms-of-use.html">Terms of Use</a></t>
 </body>
 </html>
