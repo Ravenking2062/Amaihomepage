@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "page.glide.amai8.twa",
+      "sha256_cert_fingerprints": [
+        "69:4E:20:EB:D3:E7:F0:BC:27:C7:27:52:DD:09:0C:5E:50:64:56:BB:DE:0D:DD:88:63:45:D6:B3:5B:E5:94:9E"
+      ]
+    }
+  }
+]
