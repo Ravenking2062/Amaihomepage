@@ -5,604 +5,350 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AMAI - Your Limitless Community</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #7500d1;
-            --primary-light: #9a45e0;
-            --primary-dark: #5a00a3;
-            --secondary: #ff6b00;
-            --dark: #1a1a2e;
-            --light: #f8f9fa;
-            --gray: #6c757d;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--dark);
-            background: linear-gradient(135deg, #f5f7ff 0%, #e6e9ff 100%);
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            color: #333;
             line-height: 1.6;
         }
         
         .container {
-            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
         
-        /* Header */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 20px 0;
+            border-bottom: 2px solid rgba(117, 0, 209, 0.2);
         }
         
         .logo {
             display: flex;
             align-items: center;
+            gap: 15px;
         }
         
         .logo img {
-            height: 40px;
-            margin-right: 10px;
+            height: 60px;
+            width: 60px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         
         .logo-text {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
+            color: #7500d1;
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: 1px;
         }
         
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
+        .tagline {
+            font-size: 16px;
+            color: #666;
+            margin-top: -5px;
             font-weight: 500;
-            transition: color 0.3s;
         }
         
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        .cta-button {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 30px;
+        .company-link {
+            color: #7500d1;
+            text-decoration: none;
             font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
         
-        .cta-button:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
+        .company-link:hover {
+            color: #5a00a5;
+            text-decoration: underline;
         }
         
-        /* Hero Section */
         .hero {
-            padding: 160px 0 100px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            text-align: center;
-            border-radius: 0 0 30px 30px;
-            margin-bottom: 60px;
+            display: flex;
+            align-items: center;
+            padding: 60px 0;
+            gap: 40px;
         }
         
         .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
+            flex: 1;
         }
         
-        .hero h1 {
-            font-size: 3.5rem;
+        .hero-title {
+            font-size: 48px;
+            color: #7500d1;
             margin-bottom: 20px;
-            font-weight: 700;
+            line-height: 1.2;
         }
         
-        .hero p {
-            font-size: 1.2rem;
+        .hero-subtitle {
+            font-size: 22px;
+            color: #555;
             margin-bottom: 30px;
-            opacity: 0.9;
+            font-weight: 400;
         }
         
-        .hero-buttons {
+        .hero-image {
+            flex: 1;
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
         }
         
-        .secondary-button {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(117, 0, 209, 0.2);
         }
         
-        .secondary-button:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Features */
-        .features {
-            padding: 60px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .section-title p {
-            color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .feature-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature-icon {
-            background: var(--primary-light);
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: white;
-            font-size: 28px;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--primary-dark);
-        }
-        
-        /* Categories */
-        .categories {
-            padding: 60px 0;
-            background: linear-gradient(to bottom, #f9f7ff 0%, #ffffff 100%);
-        }
-        
-        .categories-grid {
+        .quick-links {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
+            margin: 40px 0;
         }
         
-        .category-card {
+        .quick-link {
             background: white;
-            border-radius: 15px;
+            border-radius: 16px;
             padding: 25px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
         
-        .category-card:hover {
+        .quick-link:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(117, 0, 209, 0.15);
         }
         
-        .category-card i {
-            font-size: 2.5rem;
-            color: var(--primary);
+        .quick-link i {
+            font-size: 40px;
+            color: #7500d1;
             margin-bottom: 15px;
         }
         
-        .category-card h3 {
-            font-size: 1.2rem;
+        .quick-link h3 {
+            font-size: 20px;
+            color: #7500d1;
             margin-bottom: 10px;
         }
         
-        /* App Showcase */
-        .app-showcase {
-            padding: 80px 0;
-            background: var(--light);
+        .quick-link p {
+            color: #666;
+            font-size: 14px;
         }
         
-        .showcase-content {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-        
-        .showcase-text {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .showcase-text h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .showcase-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
-        
-        .showcase-image img {
-            max-width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .footer-content {
+        .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
         }
         
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: var(--primary-light);
+        .feature {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .feature-content {
+            padding: 20px;
+        }
+        
+        .feature h3 {
+            color: #7500d1;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .feature p {
+            color: #666;
+            font-size: 15px;
+        }
+        
+        .redirect-timer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(117, 0, 209, 0.1);
+            border-radius: 16px;
+            margin: 40px 0;
+        }
+        
+        .redirect-timer h2 {
+            color: #7500d1;
+            margin-bottom: 15px;
+        }
+        
+        .timer {
+            font-size: 32px;
+            font-weight: 700;
+            color: #7500d1;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 2px solid rgba(117, 0, 209, 0.2);
+            color: #666;
         }
         
         .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
         }
         
         .footer-links a {
-            color: #ccc;
+            color: #7500d1;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
         }
         
         .footer-links a:hover {
-            color: white;
+            text-decoration: underline;
         }
         
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-        
-        .social-links a:hover {
-            background: var(--primary);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #999;
-            font-size: 0.9rem;
-        }
-        
-        /* Redirect notice */
-        .redirect-notice {
-            background: #fff9e6;
-            border-left: 4px solid #ffc107;
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .redirect-notice i {
-            color: #ffc107;
-            font-size: 24px;
-            margin-right: 15px;
-        }
-        
-        /* Responsive */
         @media (max-width: 768px) {
-            .header-content {
+            .hero {
                 flex-direction: column;
                 text-align: center;
             }
             
-            .nav-links {
-                margin-top: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
+            .hero-title {
+                font-size: 36px;
             }
             
-            .nav-links li {
-                margin: 5px 10px;
+            .hero-subtitle {
+                font-size: 18px;
             }
             
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
+            .quick-links {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <div style="width: 40px; height: 40px; background: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 20px;">A</div>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJcEhZcwAACxMAAAsTAQCanBgAAAMAUExURUxpcQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJ4iMZ0AAAA8dFJOUwDmBAL6CQH9DQXy9hD8/vr5E/sW7xT1GvXw6R3v7CPrH+/mIu0p2SXeLNcf4ynbKtwv0SXUJ+Eh2ijUJtIfzyTJHtAe" alt="AMAI Logo">
+                <div>
                     <div class="logo-text">AMAI</div>
+                    <div class="tagline">Your Limitless Community</div>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#categories">Categories</a></li>
-                    <li><a href="#download">Download</a></li>
-                    <li><a href="https://www.allamai.org" target="_blank">Company</a></li>
-                </ul>
-                <button class="cta-button">Get Started</button>
             </div>
-        </div>
-    </header>
+            <a href="https://www.allamai.org" class="company-link" target="_blank">
+                Visit our website <i class="fas fa-external-link-alt"></i>
+            </a>
+        </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
+        <section class="hero">
             <div class="hero-content">
-                <h1>Your Limitless Community</h1>
-                <p>All-in-One Powerhouse. Shop, pay, travel, thrive—limitlessly.</p>
-                <div class="redirect-notice">
-                    <i class="fas fa-info-circle"></i>
-                    <div>You will be redirected to the AMAI app in <span id="countdown">13</span> seconds</div>
-                </div>
-                <div class="hero-buttons">
-                    <button class="cta-button">Explore the App</button>
-                    <button class="secondary-button">Learn More</button>
-                </div>
+                <h1 class="hero-title">Africa Connected</h1>
+                <p class="hero-subtitle">From Kampala to Cairo—one app rules all. Your business, amplified.</p>
             </div>
-        </div>
-    </section>
+            <div class="hero-image">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNjAwIDQwMCI+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiM3NTAwZDEiIG9wYWNpdHk9IjAuMSIvPjxjaXJjbGUgY3g9IjMwMCIgY3k9IjIwMCIgcj0iODAiIGZpbGw9IiM3NTAwZDEiIG9wYWNpdHk9IjAuMyIvPjxwYXRoIGQ9Ik0yMDAgMjAwIEw0MDAgMjAwIiBzdHJva2U9IiM3NTAwZDEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWRhc2hhcnJheT0iMTAiLz48dGV4dCB4PSIzMDAiIHk9IjIxMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNzUwMGQxIj5BTUFJIExvZ288L3RleHQ+PC9zdmc+" alt="AMAI App Visual">
+            </div>
+        </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Choose AMAI</h2>
-                <p>Discover the endless possibilities with our all-in-one platform</p>
+        <div class="quick-links">
+            <div class="quick-link" onclick="window.location.href='https://amai8.glide.page/dl/433228'">
+                <i class="fas fa-globe-africa"></i>
+                <h3>All Around You</h3>
+                <p>Discover services and businesses around your location</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shopping-bag"></i>
-                    </div>
-                    <h3>Shop Everything</h3>
-                    <p>From healthcare to fashion, find everything you need in one place with our extensive marketplace.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Lightning Fast</h3>
-                    <p>Quick deliveries, instant payments, and seamless browsing for the ultimate user experience.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Secure & Safe</h3>
-                    <p>Your data and transactions are protected with enterprise-grade security measures.</p>
-                </div>
+            <div class="quick-link" onclick="window.location.href='https://amai8.glide.page/dl/0319de'">
+                <i class="fas fa-layer-group"></i>
+                <h3>Categories</h3>
+                <p>Browse all categories and find what you need</p>
+            </div>
+            <div class="quick-link" onclick="window.location.href='https://amai8.glide.page/dl/2435af'">
+                <i class="fas fa-robot"></i>
+                <h3>AMAI Assistant</h3>
+                <p>Get AI-powered assistance for all your needs</p>
+            </div>
+            <div class="quick-link" onclick="window.location.href='https://amai8.glide.page/dl/1fac4c'">
+                <i class="fas fa-user-circle"></i>
+                <h3>Profile</h3>
+                <p>Manage your account and preferences</p>
             </div>
         </div>
-    </section>
 
-    <!-- Categories Section -->
-    <section class="categories" id="categories">
-        <div class="container">
-            <div class="section-title">
-                <h2>Explore Categories</h2>
-                <p>Find everything you need across our diverse categories</p>
+        <div class="features">
+            <div class="feature">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgNDAwIDIwMCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmNWY1ZjUiLz48Y2lyY2xlIGN4PSIxMjAiIGN5PSIxMDAiIHI9IjQwIiBmaWxsPSIjNzUwMGQxIiBvcGFjaXR5PSIwLjUiLz48cmVjdCB4PSIyMDAiIHk9IjYwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjNzUwMGQxIiBvcGFjaXR5PSIwLjciLz48L3N2Zz4=" alt="Feature 1">
+                <div class="feature-content">
+                    <h3>Future in Your Pocket</h3>
+                    <p>Convenience, Safety, Growth. AMAI delivers everything you need in one app.</p>
+                </div>
             </div>
-            <div class="categories-grid">
-                <div class="category-card">
-                    <i class="fas fa-heartbeat"></i>
-                    <h3>Healthcare</h3>
-                    <p>Medicines, first aid, and wellness products</p>
+            <div class="feature">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgNDAwIDIwMCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmNWY1ZjUiLz48Y2lyY2xlIGN4PSI4MCIgY3k9IjgwIiByPSIzMCIgZmlsbD0iIzc1MDBkMSIgb3BhY2l0eT0iMC43Ii8+PGNpcmNsZSBjeD0iMTYwIiBjeT0iMTIwIiByPSI0MCIgZmlsbD0iIzc1MDBkMSIgb3BhY2l0eT0iMC41Ii8+PGNpcmNsZSBjeD0iMjYwIiBjeT0iODAiIHI9IjUwIiBmaWxsPSIjNzUwMGQxIiBvcGFjaXR5PSIwLjMiLz48L3N2Zz4=" alt="Feature 2">
+                <div class="feature-content">
+                    <h3>Grow Your Empire</h3>
+                    <p>Network, Scale, Dominate. Your business, amplified with AMAI tools.</p>
                 </div>
-                <div class="category-card">
-                    <i class="fas fa-home"></i>
-                    <h3>Home Stead</h3>
-                    <p>Everything for your household needs</p>
-                </div>
-                <div class="category-card">
-                    <i class="fas fa-tshirt"></i>
-                    <h3>Fashion</h3>
-                    <p>Biggest brands and latest trends</p>
-                </div>
-                <div class="category-card">
-                    <i class="fas fa-tools"></i>
-                    <h3>Construction</h3>
-                    <p>Building materials and planning services</p>
+            </div>
+            <div class="feature">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgNDAwIDIwMCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmNWY1ZjUiLz48cGF0aCBkPSJNODAgMTIwIEwxNjAgNjAgTDI0MCAxNDAgTDM0MCA4MCIgc3Ryb2tlPSIjNzUwMGQxIiBzdHJva2Utd2lkdGg9IjQiIGZpbGw9Im5vbmUiLz48Y2lyY2xlIGN4PSI4MCIgY3k9IjEyMCIgcj0iOCIgZmlsbD0iIzc1MDBkMSIvPjxjaXJjbGUgY3g9IjE2MCIgY3k9IjYwIiByPSI4IiBmaWxsPSIjNzUwMGQxIi8+PGNpcmNsZSBjeD0iMjQwIiBjeT0iMTQwIiByPSI4IiBmaWxsPSIjNzUwMGQxIi8+PGNpcmNsZSBjeD0iMzQwIiBjeT0iODAiIHI9IjgiIGZpbGw9IiM3NTAwZDEiLz48L3N2Zz4=" alt="Feature 3">
+                <div class="feature-content">
+                    <h3>All-in-One Powerhouse</h3>
+                    <p>Shop, pay, travel, thrive—limitlessly with AMAI's integrated platform.</p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- App Showcase -->
-    <section class="app-showcase" id="download">
-        <div class="container">
-            <div class="showcase-content">
-                <div class="showcase-text">
-                    <h2>Future in Your Pocket</h2>
-                    <p>Convenience, Safety, and Growth - AMAI delivers it all in one powerful app.</p>
-                    <p>With AMAI, you can manage your business, connect with customers, schedule deliveries, and grow your empire - all from your mobile device.</p>
-                    <div class="hero-buttons" style="justify-content: flex-start; margin-top: 30px;">
-                        <button class="cta-button">Download Now</button>
-                    </div>
-                </div>
-                <div class="showcase-image">
-                    <div style="background: linear-gradient(45deg, var(--primary), var(--primary-light)); width: 300px; height: 600px; border-radius: 30px; margin: 0 auto; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);">
-                        <div style="position: absolute; top: 0; width: 100%; height: 80px; background: rgba(0, 0, 0, 0.2); display: flex; align-items: center; padding: 0 20px;">
-                            <div style="width: 40px; height: 40px; background: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: bold; font-size: 20px;">A</div>
-                            <div style="color: white; margin-left: 10px; font-weight: 500;">AMAI</div>
-                        </div>
-                        <div style="position: absolute; top: 100px; width: 100%; padding: 20px;">
-                            <div style="background: white; border-radius: 15px; padding: 15px; margin-bottom: 15px;">
-                                <div style="display: flex; align-items: center;">
-                                    <div style="width: 50px; height: 50px; background: var(--primary-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">
-                                        <i class="fas fa-box"></i>
-                                    </div>
-                                    <div style="margin-left: 15px;">
-                                        <div style="font-weight: 600;">My Orders</div>
-                                        <div style="font-size: 14px; color: var(--gray);">Track your deliveries</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="background: white; border-radius: 15px; padding: 15px;">
-                                <div style="display: flex; align-items: center;">
-                                    <div style="width: 50px; height: 50px; background: var(--secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">
-                                        <i class="fas fa-store"></i>
-                                    </div>
-                                    <div style="margin-left: 15px;">
-                                        <div style="font-weight: 600;">My Business</div>
-                                        <div style="font-size: 14px; color: var(--gray);">Manage your store</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="redirect-timer">
+            <h2>You will be redirected to the AMAI app shortly</h2>
+            <div class="timer" id="countdown">18</div>
+            <p>Experience the full AMAI app for seamless service access</p>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>AMAI</h3>
-                    <p>Your limitless community for shopping, business, and growth.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#categories">Categories</a></li>
-                        <li><a href="#download">Download App</a></li>
-                        <li><a href="https://www.allamai.org" target="_blank">Our Company</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Support</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="https://policies.inamai.org/privacy-policy.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
+        <footer>
+            <p>© 2023 AMAI - Your Limitless Community. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://policies.inamai.org/privacy-policy.html">Privacy Policy</a>
+                <a href="https://www.allamai.org">Company Website</a>
+                <a href="mailto:aliamai.org@gmail.com">Contact Us</a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 AMAI. All rights reserved. | <a href="https://www.allamai.org" style="color: #ccc;">Allamai.org</a></p>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <script>
         // Countdown timer for redirect
-        let countdown = 5;
+        let seconds = 18;
         const countdownElement = document.getElementById('countdown');
         
-        const countdownInterval = setInterval(() => {
-            countdown--;
-            countdownElement.textContent = countdown;
+        const countdown = setInterval(function() {
+            seconds--;
+            countdownElement.textContent = seconds;
             
-            if (countdown <= 0) {
-                clearInterval(countdownInterval);
+            if (seconds <= 0) {
+                clearInterval(countdown);
                 window.location.href = 'https://amai8.glide.page';
             }
         }, 1000);
